@@ -1,1 +1,94 @@
-body { margin: 0; font-family: Arial; }
+/* Modern base reset (concise)
+	 - Removes default spacing
+	 - Sets sensible box-sizing
+	 - Normalizes form elements and media
+	 - Respects reduced-motion preference
+*/
+
+/* Box sizing and inheritance */
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+/* Remove default margins */
+:where(html, body, main, header, footer, section, article, nav, figure, figcaption, aside,
+				h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, blockquote, figure) {
+	margin: 0;
+}
+
+/* Core defaults */
+html {
+	-webkit-text-size-adjust: 100%;
+	-moz-tab-size: 4;
+	tab-size: 4;
+	line-height: 1.15;
+}
+
+body {
+	min-height: 100vh;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: #fff;
+	color: #000;
+	font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+}
+
+/* Media elements */
+img, picture, video, canvas, svg {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+/* Remove list styles where appropriate */
+ol, ul {
+	list-style: none;
+	padding: 0;
+}
+
+/* Links and anchors */
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+/* Form elements inherit font */
+input, button, textarea, select {
+	font: inherit;
+}
+
+/* Tables */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/* Improve focus visibility while keeping it minimal */
+:focus {
+	outline: 2px solid Highlight;
+	outline-offset: 2px;
+}
+
+/* Utility: invisible but accessible content */
+.sr-only {
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	padding: 0 !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	clip: rect(0 0 0 0) !important;
+	white-space: nowrap !important;
+	border: 0 !important;
+}
